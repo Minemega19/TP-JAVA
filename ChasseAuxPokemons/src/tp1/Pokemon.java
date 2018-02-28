@@ -42,7 +42,7 @@ public class Pokemon {
 			return(this.nom + " est un pokemon de type " + this.type + " et de niveau " + this.niveau + "Ce pokemon n\' pas encore de maitre ");
 		if (this.nomDonne != null && this.monJoueur != null)
 			return(this.nomDonne+"est un pokemon de genre"+this.nom + "  du type " + this.type + " qui a de niveau " + this.niveau + " Ce pokemon appartient a "+ this.monJoueur);
-		
+		//
 		return("Voici un Pokemon du genre " + this.nom + "du type "+ this.type + " qui a le niveau " + this.niveau + "Ce Pokemon appartient a " +  this.monJoueur);
 	}
 	
