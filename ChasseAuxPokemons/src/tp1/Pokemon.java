@@ -69,13 +69,13 @@ public class Pokemon {
 	        this.nomDonne = nomDonne;
 	    }
 
-/*	    public String getMonJoueur() {
+	/*    public String getMonJoueur() {
 	        return monJoueur;
-	    }
-
-	    public void setMonJoueur(String monJoueur) {
-	        this.monJoueur = monJoueur;
 	    }*/
+
+	    public void setMonJoueur(Joueur monJoueur) {
+	        this.monJoueur = monJoueur;
+	    }
 
 	//Methode toString
 	public String toString(){
@@ -89,7 +89,7 @@ public class Pokemon {
 					return("Voici un Pokemon du genre " + this.nom + "du type "+ this.type + " qui a le niveau " + this.niveau + "Ce Pokemon appartient a " +  this.monJoueur);
 			}
 		else 
-			//Le Pokemon a un maitre
+			//Le Pokemon n'a pas de maitre mais a un nom
 		return("Voici un Pokemon du genre " + this.nom + "du type "+ this.type + " qui a le niveau " + this.niveau + "Ce Pokemon appartient a " +  this.monJoueur);
 	}
 	
