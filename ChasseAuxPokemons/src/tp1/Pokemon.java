@@ -8,7 +8,7 @@ public class Pokemon {
 	private String nomDonne;
 	private Joueur MonJoueur;
 
-	//Constructeur Pokemon à l'état sauvage
+	//Constructeur Pokemon a l etat sauvage
 	public Pokemon(String monNom,String montype,int monNiveau, Boolean typeDiurne){
 		this.nom = monNom;
 		this.type = montype;
@@ -17,7 +17,7 @@ public class Pokemon {
 		this.nomDonne = null;
 		this.MonJoueur = null;
 	}
-	//Constructeur Pokemon une fois Capturé
+	//Constructeur Pokemon une fois Capture
 	public Pokemon(String monNom,String montype,int monNiveau, Boolean typeDiurne, String monNomDonne, Joueur monJoueur ){
 
 		this.nom = monNom;
