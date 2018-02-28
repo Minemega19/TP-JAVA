@@ -37,7 +37,7 @@ public class Pokemon {
 			etat = "nocturne";
 		}
 		if(this.nomDonne == null && this.monJoueur != null) {
-			return("Voici un Pokemon du genre " + this.nom + "du type "+ this.type + " qui a le niveau " + this.niveau + "Ce Pokemon appartient à " +  this.monJoueur);
+			return("Voici un Pokemon du genre " + this.nom + "du type "+ this.type + " qui a le niveau " + this.niveau + "Ce Pokemon appartient a " +  this.monJoueur);
 		}
 	}
 	
