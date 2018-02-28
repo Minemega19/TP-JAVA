@@ -1,7 +1,6 @@
 package tp1;
 
 public class Joueur {
-	//Tableau des pokemons possédés par le joueur
 	private Pokemon[] tabPokemons;
 	
 	public Joueur (){
