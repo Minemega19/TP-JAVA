@@ -6,7 +6,7 @@ public class Pokemon {
 	private int niveau;
 	private Boolean diurne = true;
 	private String nomDonne;
-	private Joueur MonJoueur;
+	private Joueur monJoueur;
 
 	//Constructeur Pokemon a l etat sauvage
 	public Pokemon(String monNom,String montype,int monNiveau, Boolean typeDiurne){
@@ -15,7 +15,7 @@ public class Pokemon {
 		this.niveau = monNiveau;
 		this.diurne = typeDiurne;
 		this.nomDonne = null;
-		this.MonJoueur = null;
+		this.monJoueur = null;
 	}
 	//Constructeur Pokemon une fois Capture
 	public Pokemon(String monNom,String montype,int monNiveau, Boolean typeDiurne, String monNomDonne, Joueur monJoueur ){
@@ -25,7 +25,7 @@ public class Pokemon {
 		this.niveau = monNiveau;
 		this.diurne = typeDiurne;
 		this.nomDonne = monNomDonne;
-		this.MonJoueur = monJoueur;
+		this.monJoueur = monJoueur;
 	}
 	//Methode toString
 	public String toString(){
@@ -36,7 +36,9 @@ public class Pokemon {
 		else{
 			etat = "nocturne";
 		}
-		return(this.nom + " est un pokemon de type " + this.type + " et de niveau " + this.niveau + " Il est de type "+ etat);
+		if(this.nomDonne == null && this.monJoueur != null) {
+			return("Voici un Pokemon du genre " + this.nom + "du type "+ this.type + " qui a le niveau " + this.niveau + "Ce Pokemon appartient à " +  this.monJoueur);
+		}
 	}
 	
 	//methode dire bonjour
