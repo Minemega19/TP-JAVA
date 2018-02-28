@@ -28,7 +28,55 @@ public class Pokemon {
 		this.nomDonne = monNomDonne;
 		this.monJoueur = monJoueur;
 	}
-	
+	//Getters and setters
+		public String getNom() {
+	        return nom;
+	    }
+
+	    public void setNom(String nom) {
+	        this.nom = nom;
+	    }
+
+	    public String getType() {
+	        return type;
+	    }
+
+	    public void setType(String type) {
+	        this.type = type;
+	    }
+
+	    public int getNiveau() {
+	        return niveau;
+	    }
+
+	    public void setNiveau(int niveau) {
+	        this.niveau = niveau;
+	    }
+
+	    public Boolean getDiurne() {
+	        return diurne;
+	    }
+
+	    public void setDiurne(Boolean diurne) {
+	        this.diurne = diurne;
+	    }
+
+	    public String getNomDonne() {
+	        return nomDonne;
+	    }
+
+	    public void setNomDonne(String nomDonne) {
+	        this.nomDonne = nomDonne;
+	    }
+
+	    public String getMonJoueur() {
+	        return monJoueur;
+	    }
+
+	    public void setMonJoueur(String monJoueur) {
+	        this.monJoueur = monJoueur;
+	    }
+
 	//Methode toString
 	public String toString(){
 		/*String etat;
@@ -38,6 +86,9 @@ public class Pokemon {
 		else{
 			etat = "nocturne";
 		}*/
+		//Si le pokemon a un maitre et si nomDonee n est pas mis a null
+		//Si le pokemon a un maitre mais nomDonee est mis a null
+		//Si le pokemon n a pas de maitre
 		if (this.nomDonne==null && this.monJoueur==null)
 			return(this.nom + " est un pokemon de type " + this.type + " et de niveau " + this.niveau + "Ce pokemon n\' pas encore de maitre ");
 		if (this.nomDonne != null && this.monJoueur != null)
