@@ -6,15 +6,27 @@ public class Pokemon {
 	private int niveau;
 	private Boolean diurne = true;
 	private String nomDonne;
-	
-	//Constructeur
+	private Joueur MonJoueur;
+
+	//Constructeur Pokemon à l'état sauvage
 	public Pokemon(String monNom,String montype,int monNiveau, Boolean typeDiurne){
 		this.nom = monNom;
 		this.type = montype;
 		this.niveau = monNiveau;
 		this.diurne = typeDiurne;
+		this.nomDonne = null;
+		this.MonJoueur = null;
 	}
-	
+	//Constructeur Pokemon une fois Capturé
+	public Pokemon(String monNom,String montype,int monNiveau, Boolean typeDiurne, String monNomDonne, Joueur monJoueur ){
+
+		this.nom = monNom;
+		this.type = montype;
+		this.niveau = monNiveau;
+		this.diurne = typeDiurne;
+		this.nomDonne = monNomDonne;
+		this.MonJoueur = monJoueur;
+	}
 	//Methode toString
 	public String toString(){
 		String etat;
