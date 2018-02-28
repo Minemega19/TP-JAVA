@@ -28,21 +28,68 @@ public class Pokemon {
 		this.nomDonne = monNomDonne;
 		this.monJoueur = monJoueur;
 	}
-	
+	//Getters and setters
+		public String getNom() {
+	        return nom;
+	    }
+
+	    public void setNom(String nom) {
+	        this.nom = nom;
+	    }
+
+	    public String getType() {
+	        return type;
+	    }
+
+	    public void setType(String type) {
+	        this.type = type;
+	    }
+
+	    public int getNiveau() {
+	        return niveau;
+	    }
+
+	    public void setNiveau(int niveau) {
+	        this.niveau = niveau;
+	    }
+
+	    public Boolean getDiurne() {
+	        return diurne;
+	    }
+
+	    public void setDiurne(Boolean diurne) {
+	        this.diurne = diurne;
+	    }
+
+	    public String getNomDonne() {
+	        return nomDonne;
+	    }
+
+	    public void setNomDonne(String nomDonne) {
+	        this.nomDonne = nomDonne;
+	    }
+
+/*	    public String getMonJoueur() {
+	        return monJoueur;
+	    }
+
+	    public void setMonJoueur(String monJoueur) {
+	        this.monJoueur = monJoueur;
+	    }*/
+
 	//Methode toString
 	public String toString(){
-		/*String etat;
-		if(diurne){
-			etat = "diurne";
-		}
-		else{
-			etat = "nocturne";
-		}*/
-		if (this.nomDonne==null && this.monJoueur==null)
-			return(this.nom + " est un pokemon de type " + this.type + " et de niveau " + this.niveau + "Ce pokemon n\' pas encore de maitre ");
-		if (this.nomDonne != null && this.monJoueur != null)
-			return(this.nomDonne+"est un pokemon de genre"+this.nom + "  du type " + this.type + " qui a de niveau " + this.niveau + " Ce pokemon appartient a "+ this.monJoueur);
-		//
+		if (this.monJoueur==null){
+			//Si le pokemon n a pas de maitre
+			if (this.nomDonne==null)
+				//Le Pokemon n'a pas de maitre et n'a pas de nom
+					return(this.nom + " est un pokemon de type " + this.type + " et de niveau " + this.niveau + "Ce pokemon n\' pas encore de maitre ");
+			else 
+				//Le Pokemon n'a pas de maitre mais a un nom
+					return("Voici un Pokemon du genre " + this.nom + "du type "+ this.type + " qui a le niveau " + this.niveau + "Ce Pokemon appartient a " +  this.monJoueur);
+			}
+		else 
+			//Le Pokemon a un maitre
 		return("Voici un Pokemon du genre " + this.nom + "du type "+ this.type + " qui a le niveau " + this.niveau + "Ce Pokemon appartient a " +  this.monJoueur);
 	}
 	
