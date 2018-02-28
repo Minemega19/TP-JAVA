@@ -38,6 +38,9 @@ public class Pokemon {
 		else{
 			etat = "nocturne";
 		}*/
+		//Si le pokemon a un maitre et si nomDonee n est pas mis a null
+		//Si le pokemon a un maitre mais nomDonee est mis a null
+		//Si le pokemon n a pas de maitre
 		if (this.nomDonne==null && this.monJoueur==null)
 			return(this.nom + " est un pokemon de type " + this.type + " et de niveau " + this.niveau + "Ce pokemon n\' pas encore de maitre ");
 		if (this.nomDonne != null && this.monJoueur != null)
