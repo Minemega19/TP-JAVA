@@ -8,7 +8,7 @@ public class ChasseAuxPokemons {
 		final String mp1;
 		final String mp2;
 		final String mp3;
-
+		//Elles ne compileront pas car il n'y a plus le booleen "diurne ou nocturne"
 		final Pokemon p1 = new Pokemon("Piplup","EAU",5, true);
 		final Pokemon p2 = new Pokemon("Rowlet","PLANTE",10, false);
 		final Pokemon p3 = new Pokemon("Totodile","EAU",8, true);
