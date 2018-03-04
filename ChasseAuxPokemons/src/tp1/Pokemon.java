@@ -30,7 +30,7 @@ public class Pokemon {
 	}
 	//Getters and setters
 		public String getNom() {
-	        return nom;
+	        return this.nom;
 	    }
 
 	    public void setNom(String nom) {
@@ -38,7 +38,7 @@ public class Pokemon {
 	    }
 
 	    public String getType() {
-	        return type;
+	        return this.type;
 	    }
 
 	    public void setType(String type) {
@@ -46,7 +46,7 @@ public class Pokemon {
 	    }
 
 	    public int getNiveau() {
-	        return niveau;
+	        return this.niveau;
 	    }
 
 	    public void setNiveau(int niveau) {
@@ -69,9 +69,9 @@ public class Pokemon {
 	        this.nomDonne = nomDonne;
 	    }
 
-	/*    public String getMonJoueur() {
-	        return monJoueur;
-	    }*/
+	    public Joueur getMonJoueur() {
+	        return this.monJoueur;
+	    }
 
 	    public void setMonJoueur(Joueur monJoueur) {
 	        this.monJoueur = monJoueur;
@@ -84,11 +84,11 @@ public class Pokemon {
 			if (this.nomDonne==null)
 				//Le Pokemon n'a pas de maitre et n'a pas de nom
 					return(this.nom + " est un pokemon de type " + this.type + " et de niveau " + this.niveau + "Ce pokemon n\' pas encore de maitre ");
-			else 
+			else
 				//Le Pokemon n'a pas de maitre mais a un nom
 					return("Voici un Pokemon du genre " + this.nom + "du type "+ this.type + " qui a le niveau " + this.niveau + "Ce Pokemon appartient a " +  this.monJoueur);
 			}
-		else 
+		else
 			//Le Pokemon n'a pas de maitre mais a un nom
 		return("Voici un Pokemon du genre " + this.nom + "du type "+ this.type + " qui a le niveau " + this.niveau + "Ce Pokemon appartient a " +  this.monJoueur);
 	}
