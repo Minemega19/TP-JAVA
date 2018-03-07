@@ -26,7 +26,7 @@ public class Joueur {
 	public void capturer(Pokemon pokemoncapturer){
 		boolean capture = false;
 		int i = 0;
-
+		
 		if(pokemoncapturer.getMonJoueur() != null){
 			System.out.println("Vous ne pouvez pas capturer un pokemon qui a deja un maitre.");
 		}
@@ -36,6 +36,7 @@ public class Joueur {
 					this.tabPokemon[i] = pokemoncapturer;
 					pokemoncapturer.setMonJoueur(this);
 					capture = true;
+					pokemoncapturer.etatCapture();
 				}
 				i++;
 			}
@@ -52,7 +53,6 @@ public class Joueur {
 				this.tabPokemon[i] = null;
 				pokemoncapturer.setNomDonne(null);
 				pokemoncapturer.setMonJoueur(null);
-				pokemoncapturer.pokemonLibre();
 				liberer = true;
 			}
 			i++;
@@ -61,12 +61,10 @@ public class Joueur {
 			System.out.println("Vous netes pas le maitre de ce pokemon : vous ne pouvez pas le nommer !");
 		}
 	}
-	
-	public void nommer(Pokemon pokemonnommer, String newNom) {
+	public void nommer(Pokemon pokemonnommer) {
 		if(pokemonnommer.getMonJoueur() == this) {
-			pokemonnommer.setNomDonne(newNom);
-			pokemonnommer.pokemonRenommer();
-		}
+			pokemonnommer.setMonJoueur(this);}
+			
 		else {
 			System.out.println("Vous netes pas le maitre de ce pokemon : vous ne pouvez donc pas le nommer !");
 		}
@@ -96,6 +94,7 @@ public class Joueur {
 			System.out.println("Vous netes pas le maitre de ce pokemon : vous ne pouvez donc pas le donner");
 		}
 	}
+	
 	public void echanger(Pokemon pokemonchange, Joueur autreJoueur, Pokemon autrePokemon) {
 		boolean echange = false;
 		int i = 0;
@@ -122,4 +121,5 @@ public class Joueur {
 			System.out.println("Vous ne pouvez pas echange ce pokemon avec " + autreJoueur.prenom + " puisque " + autreJoueur.nom + " n est pas le maitre du pokemon que vous souhaitez !");
 		}
   }
+	
 }
