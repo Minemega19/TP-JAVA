@@ -1,6 +1,6 @@
 import tp1.Joueur;
 import tp1.Pokemon;
-import java.util.Scanner;
+
 public class ChasseAuxPokemons {
 
 	public static void main(String[] args) {
@@ -12,9 +12,9 @@ public class ChasseAuxPokemons {
 		
 		//Elles ne compileront pas car il n'y a plus le booleen "diurne ou nocturne"
 		
-		final Pokemon p1 = new Pokemon("Piplup","EAU",5, true, 50,0,50);
-		final Pokemon p2 = new Pokemon("Rowlet","PLANTE",10, false, 50,0,50);
-		final Pokemon p3 = new Pokemon("Totodile","EAU",8, true, 50,0,50);
+		final Pokemon p1 = new Pokemon("Piplup","EAU",5, true);
+		final Pokemon p2 = new Pokemon("Rowlet","PLANTE",10, false);
+		final Pokemon p3 = new Pokemon("Totodile","EAU",8, true);
 		
 		//Les joueurs
 		
@@ -22,9 +22,13 @@ public class ChasseAuxPokemons {
 		final Joueur joueur2 = new Joueur("Dupont","Pierre",20, new Pokemon[5]);
 		// Jean capture un pokemon qu'il nomme "Rascal " et le donne à Gabrielle
 		joueur1.capturer(p1);
-
-		System.out.println(p1.getNomDonne()); //Affiche : Rascal
+		joueur1.capturer(p3);
+		System.out.println(p1.getNom()); //Affiche : Rascal
+		System.out.println(joueur1.getNom());
+		System.out.println(joueur1.getTabPokemon());
 		
+		joueur1.getNom();
+		joueur1.getTabPokemon();
 		//affichage des toString		
 		/*System.out.println(mp1);
 		System.out.println(mp2);
