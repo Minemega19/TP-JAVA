@@ -5,36 +5,29 @@ public class Pokemon {
 	private String type; 
 	private int niveau;
 	private Boolean diurne = true;
-	private String nomDonne;//renomer le pokemon
+	private String nomDonne;//renommer le pokemon
 	private Joueur monJoueur;
-	private int appetit,satisfaction,loyaute;
-	//Constructeur Pokemon une fois Capture
-	public Pokemon(String nom, String type, int niveau, Boolean diurne, String nomDonne, Joueur monJoueur) {
-		this.nom = nom;
-		this.type = type;
-		this.niveau = niveau;
-		this.diurne = diurne;
-		this.nomDonne = nomDonne;
-		this.monJoueur = monJoueur;
-		this.nomDonne=null;
-		this.monJoueur=null;
-		this.appetit = 50;
-		this.satisfaction = 50;
-		this.loyaute = 50;
-		
-	}
-
+	private Joueur joueurNoman;// afin de savoir qui a renommer le pokemon
+	private int appetit;
+	private int loyaute;
+	private int satisfaction;
+	
 	//Constructeur
-	public Pokemon(String monNom,String montype,int monNiveau, Boolean typeDiurne){
+	public Pokemon(String monNom,String montype,int monNiveau, Boolean typeDiurne, int appetit, int loyaute, int satisfaction){
 		this.nom = monNom;
 		this.type = montype;
 		this.niveau = monNiveau;
 		this.diurne = typeDiurne;
-		
+		this.joueurNoman = monJoueur;
+		this.nomDonne=null;
+		this.monJoueur=null;
+		this.appetit = appetit;
+		this.loyaute = loyaute;
+		this.satisfaction = satisfaction;
 	}
 	
 	//Constructeur Pokemon une fois Capture
-	/*public Pokemon(String monNom,String montype,int monNiveau, Boolean typeDiurne, String monNomDonne, Joueur monJoueur ){
+	public Pokemon(String monNom,String montype,int monNiveau, Boolean typeDiurne, String monNomDonne, Joueur monJoueur , int appetit, int loyaute, int satisfaction){
 
 		this.nom = monNom;
 		this.type = montype;
@@ -42,7 +35,10 @@ public class Pokemon {
 		this.diurne = typeDiurne;
 		this.nomDonne = monNomDonne;
 		this.monJoueur = monJoueur;
-	}*/
+		this.appetit = appetit;
+		this.loyaute = loyaute;
+		this.satisfaction = satisfaction;
+	}
 	//Getters and setters
 		public String getNom() {
 	        return this.nom;
@@ -82,6 +78,7 @@ public class Pokemon {
 
 	    public void setNomDonne(String nomDonne) {
 	        this.nomDonne = nomDonne;
+	        this.joueurNoman = this.monJoueur;
 	    }
 
 	    public Joueur getMonJoueur() {
@@ -92,29 +89,24 @@ public class Pokemon {
 	        this.monJoueur = monJoueur;
 	    }
 	    public int getAppetit() {
-			return appetit;
-		}
-
-		public void setAppetit(int appetit) {
-			this.appetit = appetit;
-		}
-
-		public int getSatisfaction() {
-			return satisfaction;
-		}
-
-		public void setSatisfaction(int satisfaction) {
-			this.satisfaction = satisfaction;
-		}
-
-		public int getLoyaute() {
-			return loyaute;
-		}
-
-		public void setLoyaute(int loyaute) {
-			this.loyaute = loyaute;
-		}
-
+	    	return this.appetit;
+	    }
+	    public int getLoyaute() {
+	    	return this.loyaute;
+	    }
+	    public int getSatisfaction() {
+	    	return this.satisfaction;
+	    }
+	    public void setAppetit(int appetit) {
+	    	this.appetit = appetit;
+	    }
+	    public void setLoyaute(int loyaute) {
+	    	this.loyaute = loyaute;
+	    }
+	    public void setSatisfaction(int satisfaction) {
+	    	this.satisfaction = satisfaction;
+	    }
+	    
 	//Methode toString
 	public String toString(){
 		if (this.monJoueur==null){
@@ -148,12 +140,6 @@ public class Pokemon {
 				System.out.println("zzZZ !");
 			}		
 		}
-	}
-	public void etatCapture()
-	{
-		this.loyaute=0;
-		this.satisfaction=10;
-		this.appetit=10;
 	}
 	
 }

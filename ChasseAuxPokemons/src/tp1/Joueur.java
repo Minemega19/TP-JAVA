@@ -8,6 +8,7 @@ public class Joueur {
 	//Tableau des pokemons possédés par le joueur
 	private Pokemon tabPokemon[];
 	
+	
 	public Joueur (String nom, String prenom, int age, Pokemon tabPokemon[]){
 		this.nom = nom;
 		this.prenom = prenom;
@@ -36,7 +37,9 @@ public class Joueur {
 					this.tabPokemon[i] = pokemoncapturer;
 					pokemoncapturer.setMonJoueur(this);
 					capture = true;
-					pokemoncapturer.etatCapture();
+				//	pokemoncapturer.etatCapture();
+				// Il manque des éléments que nous n'avaons pas pu corriger à temps
+				// Ils seront corrigés Jeudi après midi
 				}
 				i++;
 			}
@@ -61,10 +64,10 @@ public class Joueur {
 			System.out.println("Vous netes pas le maitre de ce pokemon : vous ne pouvez pas le nommer !");
 		}
 	}
-	public void nommer(Pokemon pokemonnommer) {
+	public void nommer(Pokemon pokemonnommer, String newNom) {
 		if(pokemonnommer.getMonJoueur() == this) {
+
 			pokemonnommer.setMonJoueur(this);}
-			
 		else {
 			System.out.println("Vous netes pas le maitre de ce pokemon : vous ne pouvez donc pas le nommer !");
 		}

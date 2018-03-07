@@ -7,15 +7,11 @@ public class Nourriture {
 	private String[] compatibilite; //Devra être uniforme à 30
 	
 	
+	
 	public Nourriture(int apport, String nomIngredient, String[] compatibilite) {
 		this.apport = apport;
 		this.nomIngredient = nomIngredient;
 		this.compatibilite = compatibilite;
-		/*String[] compatibilities = new String[30]
-				[0] = "EAU";
-				[1] = "DRAGON";
-				[2] = "FEU";
-				[2] = "";*/
 	}
 	public String toString(){
 		return(apport + " " + nomIngredient + " " + compatibilite);
@@ -24,7 +20,7 @@ public class Nourriture {
 		
 		boolean isCompatible = false;
 
-		
+		// ça fonctionne MAIS il faut le refaire avec String[]
 		if(pokemonCompatibilite.getType().equals("DRAGON") || pokemonCompatibilite.getType().equals("FEU") || pokemonCompatibilite.getType().equals("COMBAT") || pokemonCompatibilite.getType().equals("NORMAL") || pokemonCompatibilite.getType().equals("EAU") || pokemonCompatibilite.getType().equals("ELECTRIQUE") && nomIngredient.equals("Tartiflette")){
 			isCompatible = true;
 		}
@@ -38,5 +34,6 @@ public class Nourriture {
 			isCompatible = false;
 		}
 		return isCompatible;
+		// A refaire
 	}
 }

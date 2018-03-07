@@ -1,20 +1,22 @@
 import tp1.Joueur;
+import tp1.Nourriture;
 import tp1.Pokemon;
+import java.util.Scanner;
 
 public class ChasseAuxPokemons {
 
 	public static void main(String[] args) {
-
-		//creation d'objet
-		/*final String mp1;
-		final String mp2;
-		final String mp3;*/
 		
 		//Elles ne compileront pas car il n'y a plus le booleen "diurne ou nocturne"
 		
-		final Pokemon p1 = new Pokemon("Piplup","EAU",5, true);
-		final Pokemon p2 = new Pokemon("Rowlet","PLANTE",10, false);
-		final Pokemon p3 = new Pokemon("Totodile","EAU",8, true);
+		final Pokemon p1 = new Pokemon("Piplup","EAU",5, true, 50,0,50);
+		final Pokemon p2 = new Pokemon("Rowlet","PLANTE",10, false, 50,0,50);
+		final Pokemon p3 = new Pokemon("Totodile","EAU",8, true, 50,0,50);
+		final Pokemon p4 = new Pokemon("Aflamanoir","FEU",7, true, 50,0,50);
+		final Pokemon p5 = new Pokemon("Bétochef","COMBAT",7, true, 50,0,50);
+		final Pokemon p6 = new Pokemon("Elektek","ELECTRIQUE",7, true, 50,0,50);
+		final Pokemon p7 = new Pokemon("Boumata","DRAGON",7, true, 50,0,50);
+
 		
 		//Les joueurs
 		
@@ -22,13 +24,31 @@ public class ChasseAuxPokemons {
 		final Joueur joueur2 = new Joueur("Dupont","Pierre",20, new Pokemon[5]);
 		// Jean capture un pokemon qu'il nomme "Rascal " et le donne à Gabrielle
 		joueur1.capturer(p1);
-		joueur1.capturer(p3);
-		System.out.println(p1.getNom()); //Affiche : Rascal
-		System.out.println(joueur1.getNom());
-		System.out.println(joueur1.getTabPokemon());
 		
-		joueur1.getNom();
-		joueur1.getTabPokemon();
+		
+		final Nourriture Nourriture1 = new Nourriture(35,"Tartiflette",new String[30]);
+		final Nourriture Nourriture2 = new Nourriture(10,"Ratatouille",new String[30]);
+		
+		// A utiliser
+		final String[] compatibilite = new String[30];
+		compatibilite[0] = "EAU";
+		compatibilite[1] = "FEU";
+		compatibilite[2] = "COMBAT";
+		compatibilite[3] = "DRAGON";
+		compatibilite[4] = "PLANTE";
+		compatibilite[5] = "NORMAL";
+		compatibilite[6] = "VOL";
+		compatibilite[7] = "ELECTRIQUE";
+		compatibilite[8] = "NORMAL";
+		
+		System.out.println(p1.getNom() + " est compatible avec " + Nourriture1.estCompatible(p1)); // Est Compatible donc renvoi true
+		System.out.println(p1.getNom() + " est compatible avec " + Nourriture1.estCompatible(p2)); // Est Compatible donc renvoi false
+		
+		System.out.println(p1.getNom() + " est compatible avec " + Nourriture2.estCompatible(p3)); // Est Compatible donc renvoi true
+		System.out.println(p1.getNom() + " est compatible avec " + Nourriture2.estCompatible(p7)); // Est Compatible donc renvoi false
+		
+		System.out.println(p1.getNomDonne()); //Affiche : Rascal
+		
 		//affichage des toString		
 		/*System.out.println(mp1);
 		System.out.println(mp2);
