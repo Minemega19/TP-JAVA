@@ -5,40 +5,44 @@ public class Pokemon {
 	private String type; 
 	private int niveau;
 	private Boolean diurne = true;
-	private String nomDonne;//renommer le pokemon
-	private Joueur joueurNoman;// afin de savoir qui a renommer le pokemon
+	private String nomDonne;//renomer le pokemon
 	private Joueur monJoueur;
-	private int appetit;
-	private int loyaute;
-	private int satisfaction;
-	
+	private int appetit,satisfaction,loyaute;
+	//Constructeur Pokemon une fois Capture
+	public Pokemon(String nom, String type, int niveau, Boolean diurne, String nomDonne, Joueur monJoueur) {
+		this.nom = nom;
+		this.type = type;
+		this.niveau = niveau;
+		this.diurne = diurne;
+		this.nomDonne = nomDonne;
+		this.monJoueur = monJoueur;
+		this.nomDonne=null;
+		this.monJoueur=null;
+		this.appetit = 50;
+		this.satisfaction = 50;
+		this.loyaute = 50;
+		
+	}
+
 	//Constructeur
-	public Pokemon(String monNom,String montype,int monNiveau, Boolean typeDiurne, int appetit, int loyaute, int satisfaction){
+	public Pokemon(String monNom,String montype,int monNiveau, Boolean typeDiurne){
 		this.nom = monNom;
 		this.type = montype;
 		this.niveau = monNiveau;
 		this.diurne = typeDiurne;
-		this.nomDonne=null;
-		this.monJoueur=null;
-		this.appetit = appetit;
-		this.loyaute = loyaute;
-		this.satisfaction = satisfaction;
+		
 	}
 	
 	//Constructeur Pokemon une fois Capture
-	public Pokemon(String monNom,String montype,int monNiveau, Boolean typeDiurne, String monNomDonne, Joueur monJoueur , int appetit, int loyaute, int satisfaction){
+	/*public Pokemon(String monNom,String montype,int monNiveau, Boolean typeDiurne, String monNomDonne, Joueur monJoueur ){
 
 		this.nom = monNom;
 		this.type = montype;
 		this.niveau = monNiveau;
 		this.diurne = typeDiurne;
 		this.nomDonne = monNomDonne;
-		this.joueurNoman = monJoueur;
 		this.monJoueur = monJoueur;
-		this.appetit = appetit;
-		this.loyaute = loyaute;
-		this.satisfaction = satisfaction;
-	}
+	}*/
 	//Getters and setters
 		public String getNom() {
 	        return this.nom;
@@ -78,7 +82,6 @@ public class Pokemon {
 
 	    public void setNomDonne(String nomDonne) {
 	        this.nomDonne = nomDonne;
-	        this.joueurNoman = this.monJoueur;
 	    }
 
 	    public Joueur getMonJoueur() {
@@ -88,6 +91,29 @@ public class Pokemon {
 	    public void setMonJoueur(Joueur monJoueur) {
 	        this.monJoueur = monJoueur;
 	    }
+	    public int getAppetit() {
+			return appetit;
+		}
+
+		public void setAppetit(int appetit) {
+			this.appetit = appetit;
+		}
+
+		public int getSatisfaction() {
+			return satisfaction;
+		}
+
+		public void setSatisfaction(int satisfaction) {
+			this.satisfaction = satisfaction;
+		}
+
+		public int getLoyaute() {
+			return loyaute;
+		}
+
+		public void setLoyaute(int loyaute) {
+			this.loyaute = loyaute;
+		}
 
 	//Methode toString
 	public String toString(){
@@ -123,60 +149,11 @@ public class Pokemon {
 			}		
 		}
 	}
-	
-	
-	//geteur
-	 public int getAppetit() {
-		    return this.appetit;
-	 }
-	  
-	public int getLoyaute() {
-		  	return this.loyaute;
-	}
-	
-	public int getSatisfaction() {
-		   return this.satisfaction;
-	}
-	
-	
-	//seteur
-	public void setAppetit(int appetit) {
-		  this.appetit = appetit;
-	}
-	
-	public void setLoyaute(int loyaute) {
-		   this.loyaute = loyaute;
-	 }
-	
-	public void setSatisfaction(int satisfaction) {
-		 this.satisfaction = satisfaction;
-	 }
-	
-	public void pokemonLibre (){
-		if (this.loyaute > 50)
-			this.satisfaction = this.loyaute - 50;			
-		else 
-			this.satisfaction = 0;
-		this.loyaute = 0 ;
-	}
-	
-	public void pokemonRenommer () {
-		if (this.monJoueur == null)
-			System.out.println("Ce pokemon n a pas de joueur,il ne peut donc pas etre nommer");
-		else{
-			if(this.nomDonne==null || !(this.joueurNoman.equals(this.monJoueur))){
-				if(this.loyaute>=90)
-					this.loyaute= 100;
-				else
-					this.loyaute=this.loyaute+10;
-			}
-			else{
-				if(this.loyaute<=10)
-					this.loyaute= 0;
-				else
-					this.loyaute=this.loyaute-10;
-			}
-		}
+	public void etatCapture()
+	{
+		this.loyaute=0;
+		this.satisfaction=10;
+		this.appetit=10;
 	}
 	
 }
