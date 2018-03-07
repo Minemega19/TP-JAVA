@@ -85,7 +85,25 @@ public class Pokemon {
 	    public void setMonJoueur(Joueur monJoueur) {
 	        this.monJoueur = monJoueur;
 	    }
-
+	    public int getAppetit() {
+	    	return this.appetit;
+	    }
+	    public int getLoyaute() {
+	    	return this.loyaute;
+	    }
+	    public int getSatisfaction() {
+	    	return this.satisfaction;
+	    }
+	    public void setAppetit(int appetit) {
+	    	this.appetit = appetit;
+	    }
+	    public void setLoyaute(int loyaute) {
+	    	this.loyaute = loyaute;
+	    }
+	    public void setSatisfaction(int satisfaction) {
+	    	this.satisfaction = satisfaction;
+	    }
+	    
 	//Methode toString
 	public String toString(){
 		if (this.monJoueur==null){
