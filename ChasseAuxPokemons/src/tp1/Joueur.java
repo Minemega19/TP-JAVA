@@ -52,6 +52,7 @@ public class Joueur {
 				this.tabPokemon[i] = null;
 				pokemoncapturer.setNomDonne(null);
 				pokemoncapturer.setMonJoueur(null);
+				pokemoncapturer.pokemonLibre();
 				liberer = true;
 			}
 			i++;
@@ -60,9 +61,11 @@ public class Joueur {
 			System.out.println("Vous netes pas le maitre de ce pokemon : vous ne pouvez pas le nommer !");
 		}
 	}
-	public void nommer(Pokemon pokemonnommer) {
+	
+	public void nommer(Pokemon pokemonnommer, String newNom) {
 		if(pokemonnommer.getMonJoueur() == this) {
-			pokemonnommer.setMonJoueur(this);
+			pokemonnommer.setNomDonne(newNom);
+			pokemonnommer.pokemonRenommer();
 		}
 		else {
 			System.out.println("Vous netes pas le maitre de ce pokemon : vous ne pouvez donc pas le nommer !");

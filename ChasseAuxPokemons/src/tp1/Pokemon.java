@@ -6,6 +6,7 @@ public class Pokemon {
 	private int niveau;
 	private Boolean diurne = true;
 	private String nomDonne;//renommer le pokemon
+	private Joueur joueurNoman;// afin de savoir qui a renommer le pokemon
 	private Joueur monJoueur;
 	private int appetit;
 	private int loyaute;
@@ -32,6 +33,7 @@ public class Pokemon {
 		this.niveau = monNiveau;
 		this.diurne = typeDiurne;
 		this.nomDonne = monNomDonne;
+		this.joueurNoman = monJoueur;
 		this.monJoueur = monJoueur;
 		this.appetit = appetit;
 		this.loyaute = loyaute;
@@ -76,6 +78,7 @@ public class Pokemon {
 
 	    public void setNomDonne(String nomDonne) {
 	        this.nomDonne = nomDonne;
+	        this.joueurNoman = this.monJoueur;
 	    }
 
 	    public Joueur getMonJoueur() {
@@ -85,25 +88,7 @@ public class Pokemon {
 	    public void setMonJoueur(Joueur monJoueur) {
 	        this.monJoueur = monJoueur;
 	    }
-	    public int getAppetit() {
-	    	return this.appetit;
-	    }
-	    public int getLoyaute() {
-	    	return this.loyaute;
-	    }
-	    public int getSatisfaction() {
-	    	return this.satisfaction;
-	    }
-	    public void setAppetit(int appetit) {
-	    	this.appetit = appetit;
-	    }
-	    public void setLoyaute(int loyaute) {
-	    	this.loyaute = loyaute;
-	    }
-	    public void setSatisfaction(int satisfaction) {
-	    	this.satisfaction = satisfaction;
-	    }
-	    
+
 	//Methode toString
 	public String toString(){
 		if (this.monJoueur==null){
@@ -136,6 +121,61 @@ public class Pokemon {
 			else{
 				System.out.println("zzZZ !");
 			}		
+		}
+	}
+	
+	
+	//geteur
+	 public int getAppetit() {
+		    return this.appetit;
+	 }
+	  
+	public int getLoyaute() {
+		  	return this.loyaute;
+	}
+	
+	public int getSatisfaction() {
+		   return this.satisfaction;
+	}
+	
+	
+	//seteur
+	public void setAppetit(int appetit) {
+		  this.appetit = appetit;
+	}
+	
+	public void setLoyaute(int loyaute) {
+		   this.loyaute = loyaute;
+	 }
+	
+	public void setSatisfaction(int satisfaction) {
+		 this.satisfaction = satisfaction;
+	 }
+	
+	public void pokemonLibre (){
+		if (this.loyaute > 50)
+			this.satisfaction = this.loyaute - 50;			
+		else 
+			this.satisfaction = 0;
+		this.loyaute = 0 ;
+	}
+	
+	public void pokemonRenommer () {
+		if (this.monJoueur == null)
+			System.out.println("Ce pokemon n a pas de joueur,il ne peut donc pas etre nommer");
+		else{
+			if(this.nomDonne==null || !(this.joueurNoman.equals(this.monJoueur))){
+				if(this.loyaute>=90)
+					this.loyaute= 100;
+				else
+					this.loyaute=this.loyaute+10;
+			}
+			else{
+				if(this.loyaute<=10)
+					this.loyaute= 0;
+				else
+					this.loyaute=this.loyaute-10;
+			}
 		}
 	}
 	
