@@ -11,7 +11,11 @@ public class Nourriture {
 		this.apport = apport;
 		this.nomIngredient = nomIngredient;
 		this.compatibilite = compatibilite;
-	
+		/*String[] compatibilities = new String[30]
+				[0] = "EAU";
+				[1] = "DRAGON";
+				[2] = "FEU";
+				[2] = "";*/
 	}
 	public String toString(){
 		return(apport + " " + nomIngredient + " " + compatibilite);
