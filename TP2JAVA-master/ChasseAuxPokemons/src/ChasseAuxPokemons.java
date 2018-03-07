@@ -1,6 +1,6 @@
 import tp1.Joueur;
 import tp1.Pokemon;
-
+import java.util.Scanner;
 public class ChasseAuxPokemons {
 
 	public static void main(String[] args) {
