@@ -12,9 +12,9 @@ public class ChasseAuxPokemons {
 		
 		//Elles ne compileront pas car il n'y a plus le booleen "diurne ou nocturne"
 		
-		final Pokemon p1 = new Pokemon("Piplup","EAU",5, true);
-		final Pokemon p2 = new Pokemon("Rowlet","PLANTE",10, false);
-		final Pokemon p3 = new Pokemon("Totodile","EAU",8, true);
+		final Pokemon p1 = new Pokemon("Piplup","EAU",5, true, 50,0,50);
+		final Pokemon p2 = new Pokemon("Rowlet","PLANTE",10, false, 50,0,50);
+		final Pokemon p3 = new Pokemon("Totodile","EAU",8, true, 50,0,50);
 		
 		//Les joueurs
 		
