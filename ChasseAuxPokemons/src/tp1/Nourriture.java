@@ -1,11 +1,11 @@
 package tp1;
+import java.lang.Math;
 
 public class Nourriture {
 	
 	private int apport;
 	private String nomIngredient;
 	private String[] compatibilite; //Devra être uniforme à 30
-	
 	
 	
 	public Nourriture(int apport, String nomIngredient, String[] compatibilite) {
@@ -35,5 +35,11 @@ public class Nourriture {
 		}
 		return isCompatible;
 		// A refaire
+	}
+	public double genAlea(Nourriture n1) {
+		double valeurAleatoire = 0;
+		valeurAleatoire = (double)Math.random()*100;
+		valeurAleatoire = (int) Math.round(valeurAleatoire);
+		return valeurAleatoire;
 	}
 }

@@ -48,8 +48,16 @@ public class ChasseAuxPokemons {
 		System.out.println(p1.getNom() + " est compatible avec " + Nourriture2.estCompatible(p7)); // Est Compatible donc renvoi false
 		
 		System.out.println(p1.getNomDonne()); //Affiche : Rascal
+		//System.out.println(Nourriture1.genAlea(Nourriture2));
 		
-		//affichage des toString		
+		if (Nourriture1.genAlea(Nourriture2)<30) {
+			//Creer les this
+			//Nourriture ng = new Nourriture(this.apport, this.nom, this.compatibilities);
+		}
+		else {
+			//Creer un objet null
+		}
+		//affichage des toString
 		/*System.out.println(mp1);
 		System.out.println(mp2);
 		System.out.println(mp3);*/
