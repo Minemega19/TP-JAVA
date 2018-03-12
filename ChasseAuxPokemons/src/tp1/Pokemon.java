@@ -79,6 +79,13 @@ public class Pokemon {
 	    public void setNomDonne(String nomDonne) {
 	        this.nomDonne = nomDonne;
 	        this.joueurNoman = this.monJoueur;
+	        if (null == this.nomDonne) {
+	        	this.monteLoyaute(10);
+	        }
+	        else {
+	        	this.baisseLoyaute(10);
+	        }
+
 	    }
 
 	    public Joueur getMonJoueur() {
@@ -109,21 +116,19 @@ public class Pokemon {
 	    
 	//Methode toString
 	public String toString(){
-		if (this.monJoueur==null){
-			//Si le pokemon n a pas de maitre
-			if (this.nomDonne==null)
-				//Le Pokemon n'a pas de maitre et n'a pas de nom
-					return(this.nom + " est un pokemon de type " + this.type + " et de niveau " + this.niveau + "Ce pokemon n\' pas encore de maitre ");
-			else
-				//Le Pokemon n'a pas de maitre mais a un nom
-					return("Voici un Pokemon du genre " + this.nom + "du type "+ this.type + " qui a le niveau " + this.niveau + "Ce Pokemon appartient a " +  this.monJoueur);
+		if (monJoueur != null) {
+			if (this.nomDonne != null){
+				return (this.nomDonne + " est un pokemon du genre" + this.nom + ", du type " + this.type + ", qui a le niveau " + this.niveau + ". Ce pokemon appartient a " + monJoueur.getNom() + " " + monJoueur.getPrenom() + ". Il/Elle a un appetit de " + this.appetit + ", un niveau de satisfaction de " + this.satisfaction + " et une loyaute aupres son maitre de " + this.loyaute + ".");
 			}
-		else
-			//Le Pokemon n'a pas de maitre mais a un nom
-		return("Voici un Pokemon du genre " + this.nom + "du type "+ this.type + " qui a le niveau " + this.niveau + "Ce Pokemon appartient a " +  this.monJoueur);
+			else {
+				return ("Voici un pokemon du genre " + this.nom + ", du type " + this.type + ", qui a le niveau " + this.niveau + ". Ce pokemon appartient a " + this.monJoueur.getNom() + " " + this.monJoueur.getPrenom() + ". Il/Elle a un appetit de " + this.appetit + ", un niveau de satisfaction de " + this.satisfaction + " et une loyaute aupres son maitre de " + this.loyaute + ".");
+			}
+			} else {
+				return "Voici un pokemon du genre " + this.nom + ", du type " + this.type + ", qui a le niveau " + this.niveau + ". Ce pokemon n'a pas encore de maitre. Il/Elle a un appetit de " + this.appetit + " une satisfaction de " + this.satisfaction + " et une loyaute de " + this.loyaute + ".";
+			}
 	}
 	
-	//methode dire bonjour
+	//Methode dire bonjour
 	public void direBonjour(String periode){
 		if (periode.equals("jour"))
 			if(this.diurne){
@@ -141,5 +146,55 @@ public class Pokemon {
 			}		
 		}
 	}
-	
+	public void estCapture() {
+		this.loyaute = 0;
+		if (this.satisfaction > 10) {
+			this.satisfaction = 10;
+		}
+		if (this.appetit > 10) {
+			this.appetit = 10;
+		}
+	}
+	public void estLibere() {
+		if (this.loyaute > 10) {
+			this.baisseSatisfaction(this.loyaute - 10);
+		}
+			this.loyaute = 0;
+		}
+		public void baisseAppetit(int difference) {
+			this.appetit = this.appetit - difference;
+		if (this.appetit < 0) {
+			this.appetit = 0;
+			}
+		}
+		public void monteAppetit(int difference) {
+		this.appetit = this.appetit + difference;
+		if (this.appetit > 100) {
+				this.appetit = 100;
+			}
+		}
+		public void baisseSatisfaction(int difference) {
+			this.satisfaction = this.satisfaction - difference;
+			if (this.satisfaction < 0) {
+				this.satisfaction = 0;
+			}
+		}
+		public void monteSatisfaction(int difference) {
+			this.satisfaction = this.satisfaction + difference;
+		if (this.satisfaction > 100) {
+			this.satisfaction = 100;
+			}
+		}
+		public void baisseLoyaute(int difference) {
+			this.loyaute = this.loyaute - difference;
+			if (this.loyaute < 0) {
+				this.loyaute = 0;
+			}
+		}
+		public void monteLoyaute(int difference) {
+			this.loyaute = this.loyaute + difference;
+			if (this.loyaute > 100) {
+				this.loyaute = 100;
+			}
+		}
 }

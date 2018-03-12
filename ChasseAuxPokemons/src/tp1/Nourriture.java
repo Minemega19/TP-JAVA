@@ -6,40 +6,40 @@ public class Nourriture {
 	private int apport;
 	private String nomIngredient;
 	private String[] compatibilite; //Devra être uniforme à 30
-	
+	public int frequence;
 	
 	public Nourriture(int apport, String nomIngredient, String[] compatibilite) {
 		this.apport = apport;
 		this.nomIngredient = nomIngredient;
 		this.compatibilite = compatibilite;
+		this.frequence = 30;
 	}
 	public String toString(){
-		return(apport + " " + nomIngredient + " " + compatibilite);
+			String compatibilite = this.compatibilite[0]; // le String compatibilites met les elements du tableau compatibilites
+			
+			// dans un String ou les elements sont mis en ordre.
+			for (int i = 1; i < this.compatibilite.length; ++i) {
+				compatibilite = compatibilite + ", " + this.compatibilite[i];
+			}
+			return ("nourriture " + this.nomIngredient + ", soulage l'appetit par " + this.apport + " et peut etre mangee par les types prochains de pokemons : " + compatibilite + ". Elle apparait avec un frequence " +
+			this.frequence);
 	}
-	public boolean estCompatible(Pokemon pokemonCompatibilite) {
-		
-		boolean isCompatible = false;
+	public String getIngredient() {
+		return this.nomIngredient;
+	}
+	public boolean estCompatible(String type) {
+		for (int i = 0; i < this.compatibilite.length; i++) {
+		if (type.equals(this.compatibilite[i]))
+			return true;
+		}
+			return false;
+	}
 
-		// ça fonctionne MAIS il faut le refaire avec String[]
-		if(pokemonCompatibilite.getType().equals("DRAGON") || pokemonCompatibilite.getType().equals("FEU") || pokemonCompatibilite.getType().equals("COMBAT") || pokemonCompatibilite.getType().equals("NORMAL") || pokemonCompatibilite.getType().equals("EAU") || pokemonCompatibilite.getType().equals("ELECTRIQUE") && nomIngredient.equals("Tartiflette")){
-			isCompatible = true;
-		}
-		if(pokemonCompatibilite.getType().equals("PLANTE") && nomIngredient.equals("Tartiflette")) {
-			isCompatible = false;
-		}
-		if(pokemonCompatibilite.getType().equals("PLANTE") || pokemonCompatibilite.getType().equals("EAU") || pokemonCompatibilite.getType().equals("VOL") || pokemonCompatibilite.getType().equals("FEU") || pokemonCompatibilite.getType().equals("NORMAL") || pokemonCompatibilite.getType().equals("ELECTRIQUE") || pokemonCompatibilite.getType().equals("COMBAT") && nomIngredient.equals("Ratatouille")){
-			isCompatible = true;
-		}
-		if(pokemonCompatibilite.getType().equals("DRAGON") && nomIngredient.equals("Ratatouille")){
-			isCompatible = false;
-		}
-		return isCompatible;
-		// A refaire
-	}
-	public double genAlea(Nourriture n1) {
-		double valeurAleatoire = 0;
-		valeurAleatoire = (double)Math.random()*100;
-		valeurAleatoire = (int) Math.round(valeurAleatoire);
-		return valeurAleatoire;
+	
+	public Nourriture genAlea() {
+		if (Math.round(100 * Math.random()) < this.frequence)
+		return new Nourriture(this.apport, this.nomIngredient, this.compatibilite);
+		else
+		return null;
 	}
 }

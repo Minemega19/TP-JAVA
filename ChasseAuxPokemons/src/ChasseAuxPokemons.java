@@ -28,40 +28,58 @@ public class ChasseAuxPokemons {
 		
 		final Nourriture Nourriture1 = new Nourriture(35,"Tartiflette",new String[30]);
 		final Nourriture Nourriture2 = new Nourriture(10,"Ratatouille",new String[30]);
+		// la nourriture
+		final Nourriture tartiflette = new Nourriture(35,"tartiflette", new String[] {"DRAGON", "FEU", "COMBAT", "EAU", "ELECTRIQUE"});
+		final Nourriture ratatouille = new Nourriture(10, "ratatouille", new String[] {"PLANTE", "EAU", "VOL", "FEU", "NORMAL", "ELECTRIQUE", "COMBAT"}); 
 		
-		// A utiliser
-		final String[] compatibilite = new String[30];
-		compatibilite[0] = "EAU";
-		compatibilite[1] = "FEU";
-		compatibilite[2] = "COMBAT";
-		compatibilite[3] = "DRAGON";
-		compatibilite[4] = "PLANTE";
-		compatibilite[5] = "NORMAL";
-		compatibilite[6] = "VOL";
-		compatibilite[7] = "ELECTRIQUE";
-		compatibilite[8] = "NORMAL";
 		
-		System.out.println(p1.getNom() + " est compatible avec " + Nourriture1.estCompatible(p1)); // Est Compatible donc renvoi true
+		/*System.out.println(p1.getNom() + " est compatible avec " + Nourriture1.estCompatible(p1)); // Est Compatible donc renvoi true
 		System.out.println(p1.getNom() + " est compatible avec " + Nourriture1.estCompatible(p2)); // Est Compatible donc renvoi false
 		
 		System.out.println(p1.getNom() + " est compatible avec " + Nourriture2.estCompatible(p3)); // Est Compatible donc renvoi true
-		System.out.println(p1.getNom() + " est compatible avec " + Nourriture2.estCompatible(p7)); // Est Compatible donc renvoi false
+		System.out.println(p1.getNom() + " est compatible avec " + Nourriture2.estCompatible(p7)); // Est Compatible donc renvoi false*/
 		
-		System.out.println(p1.getNomDonne()); //Affiche : Rascal
+		
+		//System.out.println(p1.getNomDonne()); //Affiche : Rascal
 		//System.out.println(Nourriture1.genAlea(Nourriture2));
-		
-		if (Nourriture1.genAlea(Nourriture2)<30) {
-			//Creer les this
-			//Nourriture ng = new Nourriture(this.apport, this.nom, this.compatibilities);
+		final Nourriture carotte = new Nourriture(2, "carotte", new String[] {"PLANTE", "TERRE", "VOL"});
+				System.out.println(carotte);
+				for (int i = 0; i < 10; i++) {
+					System.out.println(tartiflette.genAlea());
+					System.out.println(ratatouille.genAlea());
+				}
+				Scanner lecteur = new Scanner(System.in);
+				System.out.println("");
+				String reponse = "";
+				while (!reponse.equals("stop")) {
+					Nourriture n = carotte.genAlea();
+					if (n == null) {
+						System.out.println("Vous n'avez rien trouve. Si vous voulez vous arreter, tapez << stop >> . Sinon, tapez << non >> .");
+					reponse = lecteur.next();
+				while (!reponse.equals("non") && reponse.equals("stop")) {
+					System.out.println("Refaites votre choix. Tapez << stop >> ou << non >>");
+					reponse = lecteur.next();
+				}
+				} else {
+					System.out.println("Vous avez trouve un(e) " + n.getIngredient() + ".");
+					System.out.println("Voulez vous la prendre ? << oui / non / stop>>");
+					reponse = lecteur.next();
+				while (!reponse.equals("oui") && !reponse.equals("non") && !reponse.equals("stop")) {
+					System.out.println("Repetez votre choix s.v.p. Il faut taper << oui >>, << non >> ou << stop >>");
+					reponse = lecteur.next();
+				}
+				if (reponse.equals("oui")) {
+					System.out.println("Vous avez pris le/la " +
+					n.getIngredient() + ".");
+					System.out.println("Voulez-vous vous arreter ? Tapez << stop >>. Sinon, tapez << non >>");
+					reponse = lecteur.next();
+					while (!reponse.equals("non") && !reponse.equals("stop")) {
+						System.out.println("Refaites votre choix. Tapez << stop >> ou << non >>");
+						reponse = lecteur.next();
+					}
+				}
+			}
+				System.out.println();
 		}
-		else {
-			//Creer un objet null
-		}
-		//affichage des toString
-		/*System.out.println(mp1);
-		System.out.println(mp2);
-		System.out.println(mp3);*/
 	}
-	
-
 }

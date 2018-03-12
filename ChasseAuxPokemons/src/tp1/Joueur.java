@@ -36,6 +36,7 @@ public class Joueur {
 				if(this.tabPokemon[i] == null) {
 					this.tabPokemon[i] = pokemoncapturer;
 					pokemoncapturer.setMonJoueur(this);
+					pokemoncapturer.estCapture();
 					capture = true;
 				//	pokemoncapturer.etatCapture();
 				// Il manque des éléments que nous n'avaons pas pu corriger à temps
@@ -56,6 +57,7 @@ public class Joueur {
 				this.tabPokemon[i] = null;
 				pokemoncapturer.setNomDonne(null);
 				pokemoncapturer.setMonJoueur(null);
+				pokemoncapturer.estLibere();
 				liberer = true;
 			}
 			i++;
