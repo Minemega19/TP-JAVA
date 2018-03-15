@@ -38,9 +38,6 @@ public class Joueur {
 					pokemoncapturer.setMonJoueur(this);
 					pokemoncapturer.estCapture();
 					capture = true;
-				//	pokemoncapturer.etatCapture();
-				// Il manque des éléments que nous n'avaons pas pu corriger à temps
-				// Ils seront corrigés Jeudi après midi
 				}
 				i++;
 			}

@@ -39,7 +39,6 @@ public class ChasseAuxPokemons {
 		System.out.println(p1.getNom() + " est compatible avec " + Nourriture2.estCompatible(p3)); // Est Compatible donc renvoi true
 		System.out.println(p1.getNom() + " est compatible avec " + Nourriture2.estCompatible(p7)); // Est Compatible donc renvoi false*/
 		
-		
 		//System.out.println(p1.getNomDonne()); //Affiche : Rascal
 		//System.out.println(Nourriture1.genAlea(Nourriture2));
 		final Nourriture carotte = new Nourriture(2, "carotte", new String[] {"PLANTE", "TERRE", "VOL"});

@@ -7,7 +7,6 @@ public class Pokemon {
 	private Boolean diurne = true;
 	private String nomDonne;//renommer le pokemon
 	private Joueur monJoueur;
-	private Joueur joueurNoman;// afin de savoir qui a renommer le pokemon
 	private int appetit;
 	private int loyaute;
 	private int satisfaction;
