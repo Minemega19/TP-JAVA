@@ -7,6 +7,7 @@ public class Pokemon {
 	private Boolean diurne = true;
 	private String nomDonne;//renommer le pokemon
 	private Joueur monJoueur;
+//	private Joueur joueurNoman;// afin de savoir qui a renommer le pokemon
 	private int appetit;
 	private int loyaute;
 	private int satisfaction;
@@ -17,7 +18,7 @@ public class Pokemon {
 		this.type = montype;
 		this.niveau = monNiveau;
 		this.diurne = typeDiurne;
-		this.joueurNoman = monJoueur;
+		//this.joueurNoman = monJoueur;
 		this.nomDonne=null;
 		this.monJoueur=null;
 		this.appetit = appetit;
@@ -77,7 +78,7 @@ public class Pokemon {
 
 	    public void setNomDonne(String nomDonne) {
 	        this.nomDonne = nomDonne;
-	        this.joueurNoman = this.monJoueur;
+	    //    this.joueurNoman = this.monJoueur;
 	        if (null == this.nomDonne) {
 	        	this.monteLoyaute(10);
 	        }
