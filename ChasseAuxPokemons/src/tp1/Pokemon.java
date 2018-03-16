@@ -204,4 +204,8 @@ public class Pokemon {
 			else 
 				System.out.println("type du Pokemon pas compatible avec nourriture");
 		}
+		public void miseANiveau(){
+			this.niveau++;
+		}
+		
 }

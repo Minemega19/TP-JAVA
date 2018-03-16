@@ -1,6 +1,8 @@
 import tp1.Joueur;
 import tp1.Nourriture;
 import tp1.Pokemon;
+import tp1.PotionMagique;
+
 import java.util.Scanner;
 
 public class ChasseAuxPokemons {
@@ -17,7 +19,6 @@ public class ChasseAuxPokemons {
 		final Pokemon p6 = new Pokemon("Elektek","ELECTRIQUE",7, true, 50,0,50);
 		final Pokemon p7 = new Pokemon("Boumata","DRAGON",7, true, 50,0,50);
 
-		
 		//Les joueurs
 		
 		final Joueur joueur1 = new Joueur("Durant","Sachat",20,new Pokemon[5]);
@@ -31,8 +32,10 @@ public class ChasseAuxPokemons {
 		// la nourriture
 		final Nourriture tartiflette = new Nourriture(35,"tartiflette", new String[] {"DRAGON", "FEU", "COMBAT", "EAU", "ELECTRIQUE"});
 		final Nourriture ratatouille = new Nourriture(10, "ratatouille", new String[] {"PLANTE", "EAU", "VOL", "FEU", "NORMAL", "ELECTRIQUE", "COMBAT"}); 
-		
-		
+		final PotionMagique mojito = new PotionMagique("mojito", 2);
+		System.out.println(p1.getAppetit());
+		p1.mange(mojito);
+		System.out.println(p1.getAppetit());
 		/*System.out.println(p1.getNom() + " est compatible avec " + Nourriture1.estCompatible(p1)); // Est Compatible donc renvoi true
 		System.out.println(p1.getNom() + " est compatible avec " + Nourriture1.estCompatible(p2)); // Est Compatible donc renvoi false
 		
