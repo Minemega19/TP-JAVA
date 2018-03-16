@@ -197,4 +197,11 @@ public class Pokemon {
 				this.loyaute = 100;
 			}
 		}
+		public void  mange(Nourriture nourriture)
+		{
+			if (nourriture.estCompatible(this.type) )
+				nourriture.estMangee(this);
+			else 
+				System.out.println("type du Pokemon pas compatible avec nourriture");
+		}
 }

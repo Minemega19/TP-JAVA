@@ -73,12 +73,19 @@ public class ChasseAuxPokemons {
 					System.out.println("Voulez-vous vous arreter ? Tapez << stop >>. Sinon, tapez << non >>");
 					reponse = lecteur.next();
 					while (!reponse.equals("non") && !reponse.equals("stop")) {
-						System.out.println("Refaites votre choix. Tapez << stop >> ou << non >>");
-						reponse = lecteur.next();
+						if (reponse.equals("stop")) {
+							System.out.println("Refaites votre choix. Tapez << stop >> ou << non >>");
+							reponse = lecteur.next();
+						}
 					}
 				}
-			}
-				System.out.println();
+				while(p7.getAppetit()!=0){
+					System.out.println();
+					System.out.println(p7.getAppetit());
+					p7.mange(carotte);
+					System.out.println(p7.getAppetit());
+				}
+			}	
 		}
 	}
 }

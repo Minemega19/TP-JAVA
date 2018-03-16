@@ -14,6 +14,12 @@ public class Nourriture {
 		this.compatibilite = compatibilite;
 		this.frequence = 30;
 	}
+	public Nourriture(int apport, String nomIngredient, String[] compatibilite, int frequence) {
+		this.apport = apport;
+		this.nomIngredient = nomIngredient;
+		this.compatibilite = compatibilite;
+		this.frequence = frequence;
+	}
 	public String toString(){
 			String compatibilite = this.compatibilite[0]; // le String compatibilites met les elements du tableau compatibilites
 			
@@ -42,4 +48,12 @@ public class Nourriture {
 		else
 		return null;
 	}
+	
+	public void estMangee(Pokemon mangeur ){
+		if (mangeur.getAppetit() > this.apport)
+			mangeur.setAppetit(mangeur.getAppetit()-this.apport);
+		else 
+			mangeur.setAppetit(0);
+	}
+	
 }
