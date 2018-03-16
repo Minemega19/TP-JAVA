@@ -17,7 +17,6 @@ public class ChasseAuxPokemons {
 		final Pokemon p6 = new Pokemon("Elektek","ELECTRIQUE",7, true, 50,0,50);
 		final Pokemon p7 = new Pokemon("Boumata","DRAGON",7, true, 50,0,50);
 
-		
 		//Les joueurs
 		
 		final Joueur joueur1 = new Joueur("Durant","Sachat",20,new Pokemon[5]);
