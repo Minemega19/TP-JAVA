@@ -44,9 +44,9 @@ public class Nourriture {
 	
 	public Nourriture genAlea() {
 		if (Math.round(100 * Math.random()) < this.frequence)
-		return new Nourriture(this.apport, this.nomIngredient, this.compatibilite);
+			return new Nourriture(this.apport, this.nomIngredient, this.compatibilite);
 		else
-		return null;
+			return null;
 	}
 	
 	public void estMangee(Pokemon mangeur ){
