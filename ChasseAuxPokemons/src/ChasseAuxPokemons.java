@@ -34,14 +34,7 @@ public class ChasseAuxPokemons {
 		final Nourriture ratatouille = new Nourriture(10, "ratatouille", new String[] {"PLANTE", "EAU", "VOL", "FEU", "NORMAL", "ELECTRIQUE", "COMBAT"}); 
 		
 		final Gourmandise barreChocolatee = new Gourmandise(30,"barreChocolatee",new String[] {"PLANTE"},2,50,50);
-		/*System.out.println(p1.getNom() + " est compatible avec " + Nourriture1.estCompatible(p1)); // Est Compatible donc renvoi true
-		System.out.println(p1.getNom() + " est compatible avec " + Nourriture1.estCompatible(p2)); // Est Compatible donc renvoi false
-		
-		System.out.println(p1.getNom() + " est compatible avec " + Nourriture2.estCompatible(p3)); // Est Compatible donc renvoi true
-		System.out.println(p1.getNom() + " est compatible avec " + Nourriture2.estCompatible(p7)); // Est Compatible donc renvoi false*/
-		
-		//System.out.println(p1.getNomDonne()); //Affiche : Rascal
-		//System.out.println(Nourriture1.genAlea(Nourriture2));
+
 		final Nourriture carotte = new Nourriture(2, "carotte", new String[] {"PLANTE", "TERRE", "VOL"});
 				System.out.println(carotte);
 				for (int i = 0; i < 10; i++) {
