@@ -54,6 +54,5 @@ public class Nourriture {
 			mangeur.setAppetit(mangeur.getAppetit()-this.apport);
 		else 
 			mangeur.setAppetit(0);
-	}
-	
+	} 
 }
