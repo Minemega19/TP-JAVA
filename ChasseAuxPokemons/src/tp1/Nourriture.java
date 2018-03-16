@@ -3,9 +3,9 @@ import java.lang.Math;
 
 public class Nourriture {
 	
-	private int apport;
-	private String nomIngredient;
-	private String[] compatibilite; //Devra être uniforme à 30
+	protected int apport;
+	protected String nomIngredient;
+	protected String[] compatibilite; //Devra être uniforme à 30
 	public int frequence;
 	
 	public Nourriture(int apport, String nomIngredient, String[] compatibilite) {
